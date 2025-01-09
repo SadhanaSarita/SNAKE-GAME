@@ -1,4 +1,4 @@
-#SNAKE GAME 🐍
+#SNAKE GAME 🐍/////////I have made this game by taking help from CODE WITH HARRY youtube channel////////////
 This is a classic Snake Game built using Python.
 It allows players to control a snake, eat food, and grow in size while avoiding collisions.This project was created by me as part of my learning journey in Python programming.
 
