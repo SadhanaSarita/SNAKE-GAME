@@ -2,10 +2,9 @@ import random
 import pygame
 
 pygame.mixer.init()
-# Initialize pygame
-pygame.init()  # Initialize pygame
+pygame.init()  # Initializing pygame
 
-# Define colors
+# Defining colors(RGB VALUES ke hisaab se hota hai)
 white = (255, 255, 255)
 red = (255, 0, 0)
 black = (0, 0, 0)
@@ -16,7 +15,7 @@ green = (0, 255, 0)
 screenw = 1000  # Width of the game window
 screenl = 600   # Height of the game window
 
-# Create the game window
+# Creating the game window
 gameWindow = pygame.display.set_mode((screenw, screenl))
 
 bgimg=pygame.image.load('bg.jpeg')
@@ -43,7 +42,7 @@ def welcome():
         # Clear the screen
         gameWindow.fill(white)
 
-        # Display welcome messages
+        # Display the welcome messages
         score_screen("WELCOME TO SNAKES", blue, 300, 200)
         score_screen("Press SPACE to PLAY", black, 300, 300)
 
@@ -57,7 +56,7 @@ def welcome():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     # Start the game if SPACE is pressed
-  #music on baby-----------------------------------------------------------------------------                  
+  #music on ----------------------------------------------------------------------------                  
                     pygame.mixer.music.load('bgm.mp3')
                     pygame.mixer.music.play()
                     gameloop()  # Call the main game loop
@@ -82,8 +81,8 @@ def gameloop():
     snakelist = []  # List to store snake body parts
     snakelength = 1  # Initial length of the snake
     HIGHSCORE = 0  # To track the highest score
-
-    # Generate initial food position
+#in python or any game etc we take the starting point of our canvas with coordinates(0,0)to avoid any confusion for us-the coders.. 
+    # Generate starting food position
     food_x = random.randint(margin_x, screenw - margin_x - snake_size)
     food_y = random.randint(margin_y, screenl - margin_y - snake_size)
     fps = 30  # Frames per second
@@ -141,7 +140,7 @@ def gameloop():
                         velocity_y = -6
                         velocity_x = 0
 
-                    # Cheat code to increase score
+                    # Cheat code to increase score////////////////////////
                     if event.key == pygame.K_q:
                         score += 10
 
@@ -158,7 +157,7 @@ def gameloop():
             snakelength += 5  # Increase snake length
 
         # Clear the screen and draw all elements
-        gameWindow.fill(white)  # Clear the screen with white
+        gameWindow.fill(white)# white canvas
         gameWindow.blit(bgimg,(0,0))
 
         pygame.draw.circle(gameWindow, red, [food_x, food_y], snake_size)  # Draw food
